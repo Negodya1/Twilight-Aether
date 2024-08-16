@@ -1,0 +1,17 @@
+{
+  "result": {
+    "nbt": "{Enchantments:[{lvl:1s,id:\"minecraft:unbreaking\"}]}",
+    "item": "twilightaether:steeleaf_gloves",
+    "type": "minecraft:item_nbt"
+  },
+  "group": "steeleaf_armor",
+  "pattern": [
+    "# #"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/steeleaf"
+    }
+  }
+}

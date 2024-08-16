@@ -1,0 +1,19 @@
+{
+	"itemGroup.twilightaether": "Twilight Aether",
+	
+	"item.twilightaether.arctic_gloves": "Меховые перчатки",
+	"item.twilightaether.fiery_gloves": "Огненные перчатки",
+	"item.twilightaether.ironwood_gloves": "Перчатки из железного дерева",
+	"item.twilightaether.knightmetal_gloves": "Рыцарские перчатки",
+	"item.twilightaether.naga_gloves": "Перчатки из чешуи наги",
+	"item.twilightaether.phantom_gloves": "Перчатки Фантома (WIP)",
+	"item.twilightaether.steeleaf_gloves": "Перчатки из стальных листьев",
+	"item.twilightaether.yeti_gloves": "Перчатки йети",
+	
+	"item.twilightaether.fiery_cape": "Огненная накидка",
+	
+	"item.twilightaether.fiery_gloves.desc": "Поджигает цель, при атаках пустой рукой",
+	"item.twilightaether.fiery_cape.desc": "Даёт огнестойкость после получения урона от огня",
+	"item.twilightaether.knightmetal_gloves.desc": "Дополнительный урон небронированным целям",
+	"item.twilightaether.yeti_gloves.desc": "Замораживает цель, при атаках пустой рукой"
+}

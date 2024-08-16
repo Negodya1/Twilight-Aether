@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/knightmetal"
+    }
+  },
+  "pattern": [
+    "# #"
+  ],
+  "result": {
+    "item": "twilightaether:knightmetal_gloves"
+  }
+}

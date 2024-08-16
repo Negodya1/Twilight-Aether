@@ -1,0 +1,17 @@
+{
+  "result": {
+    "nbt": "{Enchantments:[{lvl:2s,id:\"minecraft:unbreaking\"}]}",
+    "item": "twilightaether:ironwood_gloves",
+    "type": "minecraft:item_nbt"
+  },
+  "group": "ironwood_armor",
+  "pattern": [
+    "# #"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/ironwood"
+    }
+  }
+}

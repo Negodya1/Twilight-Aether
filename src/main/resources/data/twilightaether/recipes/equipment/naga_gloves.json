@@ -1,0 +1,17 @@
+{
+  "result": {
+    "nbt": "{Enchantments:[{lvl:1s,id:\"minecraft:mending\"}]}",
+    "item": "twilightaether:naga_gloves",
+    "type": "minecraft:item_nbt"
+  },
+  "group": "naga_armor",
+  "pattern": [
+    "# #"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "twilightforest:naga_scale"
+    }
+  }
+}
