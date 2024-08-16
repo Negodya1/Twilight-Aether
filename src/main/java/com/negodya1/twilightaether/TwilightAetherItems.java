@@ -54,9 +54,7 @@ import com.aetherteam.aether.item.tools.zanite.ZaniteHoeItem;
 import com.aetherteam.aether.item.tools.zanite.ZanitePickaxeItem;
 import com.aetherteam.aether.item.tools.zanite.ZaniteShovelItem;
 import com.negodya1.twilightaether.item.accessories.capes.FieryCapeItem;
-import com.negodya1.twilightaether.item.accessories.gloves.ArcticGlovesItem;
-import com.negodya1.twilightaether.item.accessories.gloves.DescriptionGlovesItem;
-import com.negodya1.twilightaether.item.accessories.gloves.PhantomGlovesItem;
+import com.negodya1.twilightaether.item.accessories.gloves.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -80,14 +78,14 @@ import twilightforest.enums.TwilightArmorMaterial;
 public class TwilightAetherItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TwilightAether.MODID);
 
-    public static final RegistryObject<Item> ARCTIC_GLOVES = ITEMS.register("arctic_gloves", () -> new ArcticGlovesItem(0.5, new Item.Properties().durability(118)));
-    public static final RegistryObject<Item> FIERY_GLOVES = ITEMS.register("fiery_gloves", () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_FIERY, 1.0, TwilightAether.locate("fiery_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().durability(1024).fireResistant().rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> IRONWOOD_GLOVES = ITEMS.register("ironwood_gloves", () -> new GlovesItem(TwilightArmorMaterial.ARMOR_IRONWOOD, 0.5, TwilightAether.locate("ironwood_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().durability(512)));
-    public static final RegistryObject<Item> KNIGHTMETAL_GLOVES = ITEMS.register("knightmetal_gloves",  () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_KNIGHTLY, 0.75, TwilightAether.locate("knightmetal_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().durability(512)));
-    public static final RegistryObject<Item> NAGA_GLOVES = ITEMS.register("naga_gloves", () -> new GlovesItem(TwilightArmorMaterial.ARMOR_NAGA, 0.5, TwilightAether.locate("naga_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().durability(131)));
-    public static final RegistryObject<Item> PHANTOM_GLOVES = ITEMS.register("phantom_gloves", () -> new PhantomGlovesItem(TwilightArmorMaterial.ARMOR_PHANTOM, 0.75, TwilightAether.locate("phantom_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().durability(512).rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> STEELEAF_GLOVES = ITEMS.register("steeleaf_gloves", () -> new GlovesItem(TwilightArmorMaterial.ARMOR_STEELEAF, 0.35, TwilightAether.locate("steeleaf_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().durability(131)));
-    public static final RegistryObject<Item> YETI_GLOVES = ITEMS.register("yeti_gloves", () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_YETI, 1.0, TwilightAether.locate("yeti_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().durability(1561)));
+    public static final RegistryObject<Item> ARCTIC_GLOVES = ITEMS.register("arctic_gloves", () -> new ArcticGlovesItem(0.5, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(118)));
+    public static final RegistryObject<Item> FIERY_GLOVES = ITEMS.register("fiery_gloves", () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_FIERY, 1.0, TwilightAether.locate("fiery_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(1024).fireResistant().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> IRONWOOD_GLOVES = ITEMS.register("ironwood_gloves", () -> new IronwoodGlovesItem(TwilightArmorMaterial.ARMOR_IRONWOOD, 0.5, TwilightAether.locate("ironwood_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(512)));
+    public static final RegistryObject<Item> KNIGHTMETAL_GLOVES = ITEMS.register("knightmetal_gloves",  () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_KNIGHTLY, 0.75, TwilightAether.locate("knightmetal_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(512)));
+    public static final RegistryObject<Item> NAGA_GLOVES = ITEMS.register("naga_gloves", () -> new NagaGlovesItem(TwilightArmorMaterial.ARMOR_NAGA, 0.5, TwilightAether.locate("naga_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(131)));
+    public static final RegistryObject<Item> PHANTOM_GLOVES = ITEMS.register("phantom_gloves", () -> new PhantomGlovesItem(TwilightArmorMaterial.ARMOR_PHANTOM, 0.75, TwilightAether.locate("phantom_gloves"), () -> SoundEvents.ARMOR_EQUIP_IRON, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(512).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> STEELEAF_GLOVES = ITEMS.register("steeleaf_gloves", () -> new SteeleafGlovesItem(TwilightArmorMaterial.ARMOR_STEELEAF, 0.35, TwilightAether.locate("steeleaf_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(131)));
+    public static final RegistryObject<Item> YETI_GLOVES = ITEMS.register("yeti_gloves", () -> new DescriptionGlovesItem(TwilightArmorMaterial.ARMOR_YETI, 1.0, TwilightAether.locate("yeti_gloves"), () -> SoundEvents.ARMOR_EQUIP_LEATHER, new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).durability(1561)));
 
-    public static final RegistryObject<Item> FIERY_CAPE = ITEMS.register("fiery_cape", () -> new FieryCapeItem(new Item.Properties().stacksTo(1).fireResistant().durability(20).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> FIERY_CAPE = ITEMS.register("fiery_cape", () -> new FieryCapeItem(new Item.Properties().tab(TwilightAether.TwilightAetherCreativeTab.instance).stacksTo(1).fireResistant().durability(20).rarity(Rarity.UNCOMMON)));
 }

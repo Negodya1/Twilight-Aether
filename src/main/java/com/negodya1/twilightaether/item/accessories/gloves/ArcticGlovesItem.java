@@ -18,6 +18,8 @@ import org.jetbrains.annotations.Nullable;
 import twilightforest.enums.TwilightArmorMaterial;
 
 public class ArcticGlovesItem extends GlovesItem implements DyeableLeatherItem {
+    protected ResourceLocation GLOVES_BASE_TEXTURE;
+
     public ArcticGlovesItem(double punchDamage, Item.Properties properties) {
         super(TwilightArmorMaterial.ARMOR_ARCTIC, punchDamage, TwilightAether.locate("arctic_gloves"), () -> {
             return SoundEvents.ARMOR_EQUIP_LEATHER;
@@ -43,7 +45,12 @@ public class ArcticGlovesItem extends GlovesItem implements DyeableLeatherItem {
 
     @Override
     public void setRenderTexture(String modId, String registryName) {
-        this.GLOVES_TEXTURE = new ResourceLocation(modId, "textures/models/accessory/gloves/" + registryName + "_accessory");
+        this.GLOVES_TEXTURE = new ResourceLocation(modId, "textures/models/accessory/gloves/" + registryName + "_accessory_dyed.png");
+        this.GLOVES_BASE_TEXTURE = new ResourceLocation(modId, "textures/models/accessory/gloves/" + registryName + "_accessory.png");
+    }
+
+    public ResourceLocation getGlovesBaseTexture() {
+        return this.GLOVES_BASE_TEXTURE;
     }
 
     public int getColor(ItemStack stack, int type) {

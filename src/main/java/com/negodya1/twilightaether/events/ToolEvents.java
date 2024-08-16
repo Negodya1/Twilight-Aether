@@ -28,7 +28,6 @@ import twilightforest.data.tags.BlockTagGenerator;
 import twilightforest.init.TFItems;
 import twilightforest.init.TFMobEffects;
 import twilightforest.item.EnderBowItem;
-import twilightforest.item.GiantItem;
 import twilightforest.item.MazebreakerPickItem;
 import twilightforest.item.MinotaurAxeItem;
 
@@ -46,7 +45,7 @@ public class ToolEvents {
 	public static void onGloveDamage(LivingHurtEvent event) {
 		LivingEntity target = event.getEntity();
 
-		if (!target.level().isClientSide() && event.getSource().getDirectEntity() instanceof LivingEntity living) {
+		if (!target.level.isClientSide() && event.getSource().getDirectEntity() instanceof LivingEntity living) {
 			if (event.getSource().getDirectEntity()instanceof Player player) {
 				if (target.getArmorValue() == 0) {
 					getAccessory(player, TwilightAetherItems.KNIGHTMETAL_GLOVES.get()).ifPresent((slot) -> {
@@ -58,7 +57,7 @@ public class ToolEvents {
 								event.setAmount(event.getAmount() + KNIGHTMETAL_BONUS_DAMAGE);
 							}
 							// enchantment attack sparkles
-							((ServerLevel) target.level()).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
+							((ServerLevel) target.level).getChunkSource().broadcastAndSend(target, new ClientboundAnimatePacket(target, 5));
 						}
 					});
 				}

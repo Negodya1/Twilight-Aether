@@ -4,10 +4,10 @@ import com.aetherteam.aether.client.renderer.accessory.GlovesRenderer;
 import com.mojang.logging.LogUtils;
 import com.negodya1.twilightaether.client.renderer.accessory.LayeredGlovesRenderer;
 import net.minecraft.core.cauldron.CauldronInteraction;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -25,6 +25,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 import twilightforest.TFConfig;
+import twilightforest.init.TFEnchantments;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TwilightAether.MODID)
@@ -34,23 +35,6 @@ public class TwilightAether {
     public static void logThis(String str) {
         LOGGER.info(str);
     }
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("twilightaether", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .title(Component.translatable("itemGroup." + MODID))
-            .icon(() -> TwilightAetherItems.FIERY_GLOVES.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(TwilightAetherItems.ARCTIC_GLOVES.get());
-                output.accept(TwilightAetherItems.FIERY_GLOVES.get());
-                generateGearWithEnchants(output, TwilightAetherItems.IRONWOOD_GLOVES.get(), new EnchantmentInstance(Enchantments.UNBREAKING, 2));
-                output.accept(TwilightAetherItems.KNIGHTMETAL_GLOVES.get());
-                generateGearWithEnchants(output, TwilightAetherItems.NAGA_GLOVES.get(), new EnchantmentInstance(Enchantments.MENDING, 1));
-                output.accept(TwilightAetherItems.PHANTOM_GLOVES.get());
-                generateGearWithEnchants(output, TwilightAetherItems.STEELEAF_GLOVES.get(), new EnchantmentInstance(Enchantments.UNBREAKING, 1));
-                output.accept(TwilightAetherItems.YETI_GLOVES.get());
-                output.accept(TwilightAetherItems.FIERY_CAPE.get());
-            }).build());
 
     public TwilightAether() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -58,8 +42,6 @@ public class TwilightAether {
         modEventBus.addListener(this::commonSetup);
 
         TwilightAetherItems.ITEMS.register(modEventBus);
-
-        CREATIVE_MODE_TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -92,13 +74,16 @@ public class TwilightAether {
         }
     }
 
-    private static void generateGearWithEnchants(CreativeModeTab.Output output, ItemLike item, EnchantmentInstance... instances) {
-        ItemStack stack = new ItemStack(item);
-        if (TFConfig.COMMON_CONFIG.defaultItemEnchants.get()) {
-            for (EnchantmentInstance enchant : instances) {
-                stack.enchant(enchant.enchantment, enchant.level);
-            }
+    public static class TwilightAetherCreativeTab extends CreativeModeTab {
+        private TwilightAetherCreativeTab(int index, String label) {
+            super(index, label);
         }
-        output.accept(stack);
+
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(TwilightAetherItems.FIERY_GLOVES.get());
+        }
+
+        public static final TwilightAetherCreativeTab instance = new TwilightAetherCreativeTab(CreativeModeTab.TABS.length, "twilightaether");
     }
 }
