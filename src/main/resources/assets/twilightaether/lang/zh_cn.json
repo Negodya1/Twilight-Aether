@@ -1,0 +1,19 @@
+{
+	"itemGroup.twilightaether": "Twilight Aether",
+	
+	"item.twilightaether.arctic_gloves": "极地手套",
+	"item.twilightaether.fiery_gloves": "炽铁护手",
+	"item.twilightaether.ironwood_gloves": "铁木护手",
+	"item.twilightaether.knightmetal_gloves": "骑士拳甲",
+	"item.twilightaether.naga_gloves": "娜迦护手",
+	"item.twilightaether.phantom_gloves": "幻影拳甲（WIP）",
+	"item.twilightaether.steeleaf_gloves": "钢叶护手",
+	"item.twilightaether.yeti_gloves": "雪怪手套",
+	
+	"item.twilightaether.fiery_cape": "炽铁披风",
+	
+	"item.twilightaether.fiery_gloves.desc": "空手攻击时灼烧目标", 
+	"item.twilightaether.fiery_cape.desc": "受到火焰伤害后获得抗火效果",
+	"item.twilightaether.knightmetal_gloves.desc": "对无护甲的目标造成额外伤害",
+	"item.twilightaether.yeti_gloves.desc": "空手攻击时冻结目标" 
+}
